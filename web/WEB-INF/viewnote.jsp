@@ -12,7 +12,7 @@
         <title>Simple Note Keeper</title>
     </head>
     <body>
-        <h1>View Note</h1>
+        <h1>View Note </h1>
         <br>
         <label>Title:</label><p>${note.title}</p>
         <br>
