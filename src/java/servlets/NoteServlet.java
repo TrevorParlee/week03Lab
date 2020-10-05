@@ -1,7 +1,7 @@
 
 package servlets;
 
-import Models.Note;
+import domain.Note;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -46,17 +46,17 @@ public class NoteServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-         String path = getServletContext().getRealPath("/WEB-INF/notes.txt");
-       BufferedReader br = new BufferedReader(new FileReader(new File(path)));
-       String title = br.readLine();
-       String contents = br.readLine();
-       br.close();
+       String path = getServletContext().getRealPath("/WEB-INF/notes.txt");
+        PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(path, false)));
+       String title = request.getParameter("title");
+       String contents = request.getParameter("contents");
+       //br.close();
         Note note = new Note(title, contents);
        // nn.setTitle(title);
        // nn.setContents(contents);
        request.setAttribute("note", note);
        
-       PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(path, false)));
+      
         pw.write(title + " \n" + contents);
         getServletContext().getRequestDispatcher("/WEB-INF/viewnote.jsp").
         forward(request, response);

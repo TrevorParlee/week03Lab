@@ -19,7 +19,7 @@
         <br>
         <label>Contents: </label>
         <br>
-        <p>${nn.contents}</p>
+        <p>${note.contents}</p>
         
         <a href="note?edit">Edit</a>
         

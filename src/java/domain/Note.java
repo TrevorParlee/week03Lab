@@ -1,5 +1,5 @@
 
-package Models;
+package domain;
 
 import java.io.Serializable;
 
@@ -7,7 +7,11 @@ public class Note implements Serializable{
     private String title;
     private String contents;
     
-    
+    public Note(){
+        this.title = "";
+        this.contents = "";
+        
+    }
 
     public Note(String title, String contents) {
         this.title = title;
