@@ -9,18 +9,19 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Simple  Note Keeper</title>
+        <title>Simple Note Keeper</title>
     </head>
     <body>
+        
         <h1>View Note </h1>
         <br>
         <label>Title:</label><p>${note.title}</p>
         <br>
         <label>Contents: </label>
         <br>
-        <p>${note.contents}</p>
+        <p>${nn.contents}</p>
         
-        <a href="note">Edit</a>
+        <a href="note?edit">Edit</a>
         
     </body>
 </html>

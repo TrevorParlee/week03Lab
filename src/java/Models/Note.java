@@ -7,10 +7,7 @@ public class Note implements Serializable{
     private String title;
     private String contents;
     
-    public Note(){
-        title = "";
-        contents = "";
-    }
+    
 
     public Note(String title, String contents) {
         this.title = title;
@@ -31,6 +28,11 @@ public class Note implements Serializable{
 
     public void setContents(String contents) {
         this.contents = contents;
+    }
+
+    @Override
+    public String toString() {
+        return "Note{" + "title=" + title + ", contents=" + contents + '}';
     }
     
 }
